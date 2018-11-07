@@ -27,7 +27,7 @@ db.on('error', function(){
 })
 
 //const hostname = '127.0.0.1';
-const port = 22;
+const port = 443;
 
 //Initialize app
 const app = express();
