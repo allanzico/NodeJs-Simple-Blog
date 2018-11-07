@@ -26,7 +26,7 @@ db.on('error', function(){
   console.log(err);
 })
 
-const hostname = '127.0.0.1';
+//const hostname = '127.0.0.1';
 const port = 22;
 
 //Initialize app
@@ -102,6 +102,6 @@ app.use('/users', users);
 
 
 //Start Server
-app.listen(port, hostname, function(){
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port,  function(){
+  console.log(`Server running`);
 });
