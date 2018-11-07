@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        title learning nodejs blog
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+        link(rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css")
+        link(rel="stylesheet" href="/css/style.css")
+    body 
+
+        nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+            a.navbar-brand(href='/') This is a Blog
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarsExampleDefault.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item
+                        a.nav-link(href='/')
+                            i.fas.fa-home
+                            |   Home 
+                            span.sr-only (current)
+                    if user
+                        li.nav-item
+                            a.nav-link(href='/articles/add') 
+                                i.fas.fa-pencil-alt
+                                |   Add Article
+                
+                ul.navbar-nav.ml-auto
+                    if user
+                        li.nav-item
+                            a.nav-link(href='/users/logout')
+                                <i class="fas fa-sign-out-alt"></i> 
+                                |   Logout
+                    else
+                        li.nav-item
+                            a.nav-link(href="/users/register")
+                                i.fas.fa-user-plus    
+                                |   Register
+                        li.nav-item
+                            a.nav-link(href="/users/login")
+                                i.fas.fa-sign-in-alt
+                                |   Login
+                                 
+                    
+        .container
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+            block content
+            br
+            hr
+            footer
+                p Allan &copy; 2018
+
+        script(src="/bower_components/jquery/dist/jquery.js")
+        script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+        script(src="/js/main.js")
