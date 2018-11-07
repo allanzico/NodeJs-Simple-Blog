@@ -61,6 +61,5 @@ typings/
 .next
 
 #File with keys
-keys.js
 public.key
 private key.ppk
