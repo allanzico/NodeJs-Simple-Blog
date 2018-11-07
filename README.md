@@ -1,2 +1,2 @@
 # NodeJs-Simple-Blog
-App developed while learning NodeJs and Express from a Youtube Tutorial
+App developed whith NodeJs for the backend, and PugJs as the templating engine; from a Youtube tutorial
